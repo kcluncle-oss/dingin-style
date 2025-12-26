@@ -1,0 +1,197 @@
+/* ==========================================================================
+   🍵 定迎 (Ding In) 官方網站 - 品牌視覺樣式表 (V24 完整整合版)
+   由 K.C. 督導版本控管 / 託管於 GitHub
+   ========================================================================== */
+
+/* -----------------------------------------------------------
+   1. 【全站核心】字體與背景
+   ----------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+* { font-family: 'Noto Serif TC', serif !important; }
+
+/* 修正輸入框文字顏色 (避免打字看不到) */
+input, textarea, select, .field__input {
+    color: #ffffff !important;
+    background-color: rgba(255,255,255,0.05) !important;
+    border: 1px solid #C6A665 !important;
+    border-radius: 0 !important;
+}
+::placeholder { color: rgba(255,255,255,0.4) !important; }
+
+/* 標題與內文提亮 */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #C6A665 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+}
+p, .rte, .rte p {
+    color: #e6e6e6 !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0b2118; }
+::-webkit-scrollbar-thumb { background: #C6A665; border-radius: 5px; }
+
+
+/* -----------------------------------------------------------
+   2. 【導覽列 (Header)】金線動畫與選單
+   ----------------------------------------------------------- */
+/* 選單項目 */
+.header__menu-item {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #e0e0e0 !important;
+    letter-spacing: 0.1em !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    position: relative !important;
+    display: inline-block !important;
+    padding-bottom: 6px !important;
+}
+/* 金線動畫 */
+.header__menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0%; height: 2px;
+    background-color: #C6A665;
+    transition: width 0.3s ease-in-out;
+}
+.header__menu-item:hover::after,
+.header__active-menu-item::after,
+details[open] > .header__menu-item::after {
+    width: 100% !important;
+}
+.header__menu-item:hover { color: #C6A665 !important; }
+
+/* 功能圖示 (登入/購物車) - 細體優雅版 */
+.header__icon, .header__icon span, .header__link-label {
+    font-family: 'Noto Serif TC', serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: #e0e0e0 !important;
+    letter-spacing: 0.1em !important;
+    text-decoration: none !important;
+}
+.header__icon .icon {
+    width: 22px !important; height: 22px !important;
+    fill: #C6A665 !important;
+    margin-right: 5px !important;
+    vertical-align: middle !important;
+}
+.header__icon:hover, .header__icon:hover .header__link-label, .header__icon:hover .icon {
+    color: #C6A665 !important; fill: #C6A665 !important;
+    transform: scale(1.05); transition: all 0.3s ease;
+}
+
+
+/* -----------------------------------------------------------
+   3. 【下拉選單、搜尋、購物車】(黑化補漏)
+   ----------------------------------------------------------- */
+/* 下拉選單與側拉抽屜 */
+.header__submenu, .header__submenu.list-menu, details[open] > .header__submenu,
+.menu-drawer__menu, .cart-drawer, .drawer__inner, .drawer__content,
+.menu-drawer, .menu-drawer__inner-container {
+    background-color: #0b2118 !important;
+    border: 1px solid #C6A665 !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
+}
+/* 搜尋預覽框 */
+.predictive-search, .predictive-search__results-list, .search-modal__content {
+    background-color: #0b2118 !important;
+    border: 1px solid #C6A665 !important;
+}
+.predictive-search__item-heading, .predictive-search__item-query-result mark {
+    color: #C6A665 !important;
+}
+
+/* 內容文字修正 */
+.header__submenu .header__menu-item, .menu-drawer__menu-item,
+.cart-drawer__heading, .cart-item__name, .cart-item__price, 
+.predictive-search__item p, .predictive-search__item a {
+    color: #e0e0e0 !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+.header__submenu .header__menu-item:hover,
+.menu-drawer__menu-item:hover {
+    color: #C6A665 !important;
+    background-color: rgba(198, 166, 101, 0.15) !important;
+}
+.menu-drawer__close-button, .cart-item__quantity-wrapper .quantity__input {
+    color: #C6A665 !important;
+}
+
+
+/* -----------------------------------------------------------
+   4. 【首頁 Banner】(秋日茶宴)
+   ----------------------------------------------------------- */
+/* 膠囊標籤 */
+.hero__subtitle, .slideshow__subtitle, .mega-subtitle {
+    display: inline-block !important;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.2em !important;
+    color: #C6A665 !important;
+    background-color: rgba(11, 33, 24, 0.85) !important;
+    border: 1px solid #C6A665 !important;
+    padding: 8px 24px !important;
+    border-radius: 50px !important;
+    margin-bottom: 20px !important;
+    text-transform: uppercase !important;
+}
+/* 大標題 */
+.hero__title, .slideshow__title {
+    font-size: 60px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5) !important;
+    margin-bottom: 10px !important;
+}
+/* 手機版調整 */
+@media only screen and (max-width: 767px) {
+    .hero__title, .slideshow__title { font-size: 36px !important; }
+}
+
+
+/* -----------------------------------------------------------
+   5. 【按鈕與公告列】
+   ----------------------------------------------------------- */
+/* 金磚按鈕 */
+.button, .btn, .hero__btn, .slideshow__btn {
+    background-color: #C6A665 !important;
+    color: #0b2118 !important;
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    border: 1px solid #C6A665 !important;
+}
+.button:hover, .btn:hover, .hero__btn:hover {
+    background-color: #0b2118 !important;
+    color: #C6A665 !important;
+    box-shadow: 0 0 15px rgba(198, 166, 101, 0.4) !important;
+}
+
+/* 頂部公告列 */
+.announcement-bar, #section-announcement-bar {
+    background-color: #0b2118 !important;
+    border-bottom: 1px solid rgba(198, 166, 101, 0.3) !important;
+}
+.announcement-bar__message { color: #C6A665 !important; font-weight: 500 !important; }
+
+
+/* -----------------------------------------------------------
+   6. 【頁尾 (Footer)】
+   ----------------------------------------------------------- */
+.site-footer, footer, .footer {
+    background-color: #081a13 !important;
+    border-top: 1px solid rgba(198, 166, 101, 0.3) !important;
+}
+.footer__title, .site-footer__section-title { color: #C6A665 !important; }
+.footer__content, .site-footer a, .site-footer p { color: #b0b0b0 !important; }
+.site-footer a:hover { color: #C6A665 !important; padding-left: 5px !important; transition: all 0.3s ease; }
+.footer__copyright { border-top: 1px solid rgba(255,255,255,0.1) !important; opacity: 0.6 !important; }

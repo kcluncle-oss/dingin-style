@@ -195,3 +195,35 @@ details[open] > .header__menu-item::after {
 .footer__content, .site-footer a, .site-footer p { color: #b0b0b0 !important; }
 .site-footer a:hover { color: #C6A665 !important; padding-left: 5px !important; transition: all 0.3s ease; }
 .footer__copyright { border-top: 1px solid rgba(255,255,255,0.1) !important; opacity: 0.6 !important; }
+
+
+/* ======================================================
+   🍵 定迎 V26 - 電腦版導覽列 (Header) 高度縮減
+   ====================================================== */
+@media screen and (min-width: 990px) {
+    /* 1. 壓縮 Header 本體的上下空間 */
+    .header {
+        padding-top: 5px !important;       /* 頂部留白：原本約 30px -> 改為 5px */
+        padding-bottom: 5px !important;    /* 底部留白：原本約 20px -> 改為 5px */
+        row-gap: 0px !important;           /* 讓第一排(Logo)跟第二排(選單)靠緊一點 */
+    }
+
+    /* 2. 讓 Logo 不要佔據太多垂直空間 */
+    .header__heading-link {
+        padding-top: 5px !important;       /* 縮減 Logo 上方的留白 */
+        padding-bottom: 5px !important;    /* 縮減 Logo 下方的留白 */
+    }
+
+    /* 3. 讓選單列 (第二排) 往上靠 */
+    .header__inline-menu {
+        margin-top: 0 !important;          /* 消除多餘的頂部距離 */
+        padding-top: 0 !important;
+        padding-bottom: 5px !important;    /* 選單下方稍微留一點點就好 */
+    }
+    
+    /* 4. (選用) 如果搜尋框也覺得太厚，可以微調 */
+    .field__input {
+        height: 40px !important; /* 設定一個標準高度 */
+        min-height: 40px !important;
+    }
+}

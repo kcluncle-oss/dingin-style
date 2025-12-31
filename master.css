@@ -227,3 +227,16 @@ details[open] > .header__menu-item::after {
         min-height: 40px !important;
     }
 }
+
+/* -----------------------------------------------------------
+   7. 【修正】商品數量選單 (Quantity Selector)
+   解決白色背景下數字看不見的問題 (強制改為黑色)
+   ----------------------------------------------------------- */
+input[name="quantity"],
+.quantity__input,
+.product-form__input--quantity,
+.product-quantity input {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important; /* Safari/Chrome 額外保險 */
+    font-weight: 700 !important; /* 讓數字粗一點，更清楚 */
+}
